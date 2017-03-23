@@ -9,6 +9,7 @@
 import UIKit
 
 protocol AddPrizeInteractorProtocol {
+    
     func addNewPrize()
 }
 

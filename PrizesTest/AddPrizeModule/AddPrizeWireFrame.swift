@@ -9,6 +9,7 @@
 import Foundation
 
 protocol AddPrizeWireFrameProtocol {
+    
     func dismissAndInsertPrize()
 }
 
