@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E104D47B1E82919900A6D8D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E104D47A1E82919900A6D8D5 /* AppDelegate.swift */; };
 		E104D4831E82919900A6D8D5 /* PrizesTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E104D4811E82919900A6D8D5 /* PrizesTest.xcdatamodeld */; };
 		E104D4851E82919900A6D8D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E104D4841E82919900A6D8D5 /* Assets.xcassets */; };
 		E104D4881E82919900A6D8D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E104D4861E82919900A6D8D5 /* LaunchScreen.storyboard */; };
@@ -21,7 +20,10 @@
 		E104D4A01E8292A200A6D8D5 /* PrizesWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E104D49F1E8292A200A6D8D5 /* PrizesWireFrame.swift */; };
 		E136108D1E842276004A90AB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136108C1E842276004A90AB /* CoreDataManager.swift */; };
 		E1753C6E1E82D71A002FCFBD /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1753C6D1E82D71A002FCFBD /* DataStore.swift */; };
-		E1D096A31E82E766001DB9CC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D096A21E82E766001DB9CC /* Constants.swift */; };
+		E1BA50C91E8476510090D3E0 /* PrizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA50C81E8476510090D3E0 /* PrizeModel.swift */; };
+		E1BA50D11E8477420090D3E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA50CC1E8477420090D3E0 /* Constants.swift */; };
+		E1BA50D51E8477BF0090D3E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BA50D41E8477BF0090D3E0 /* AppDelegate.swift */; };
+		E1BA50DB1E8479AB0090D3E0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1BA50DA1E8479AB0090D3E0 /* Info.plist */; };
 		FD693A48636088C9B331BBA3 /* Pods_PrizesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D317D09DB7D79AE4FB741C /* Pods_PrizesTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,11 +32,9 @@
 		87D317D09DB7D79AE4FB741C /* Pods_PrizesTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrizesTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC6D4E1EEE0D4A3C0AF7E1F /* Pods-PrizesTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrizesTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrizesTest/Pods-PrizesTest.debug.xcconfig"; sourceTree = "<group>"; };
 		E104D4771E82919900A6D8D5 /* PrizesTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrizesTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E104D47A1E82919900A6D8D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E104D4821E82919900A6D8D5 /* PrizesTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrizesTest.xcdatamodel; sourceTree = "<group>"; };
 		E104D4841E82919900A6D8D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E104D4871E82919900A6D8D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E104D4891E82919900A6D8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E104D4911E8291FF00A6D8D5 /* AddPrize.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddPrize.storyboard; sourceTree = "<group>"; };
 		E104D4931E82920F00A6D8D5 /* Prizes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Prizes.storyboard; sourceTree = "<group>"; };
 		E104D4951E82922600A6D8D5 /* PrizesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrizesViewController.swift; sourceTree = "<group>"; };
@@ -45,7 +45,10 @@
 		E104D49F1E8292A200A6D8D5 /* PrizesWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrizesWireFrame.swift; sourceTree = "<group>"; };
 		E136108C1E842276004A90AB /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E1753C6D1E82D71A002FCFBD /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		E1D096A21E82E766001DB9CC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E1BA50C81E8476510090D3E0 /* PrizeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrizeModel.swift; sourceTree = "<group>"; };
+		E1BA50CC1E8477420090D3E0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E1BA50D41E8477BF0090D3E0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E1BA50DA1E8479AB0090D3E0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,15 +101,10 @@
 		E104D4791E82919900A6D8D5 /* PrizesTest */ = {
 			isa = PBXGroup;
 			children = (
+				E1BA50CA1E8476D10090D3E0 /* General */,
 				E104D4A11E8292B300A6D8D5 /* DataStore */,
 				E104D4901E8291DD00A6D8D5 /* AddPrizeModule */,
 				E104D48F1E8291A500A6D8D5 /* PrizesModule */,
-				E104D47A1E82919900A6D8D5 /* AppDelegate.swift */,
-				E104D4841E82919900A6D8D5 /* Assets.xcassets */,
-				E104D4861E82919900A6D8D5 /* LaunchScreen.storyboard */,
-				E104D4891E82919900A6D8D5 /* Info.plist */,
-				E104D4811E82919900A6D8D5 /* PrizesTest.xcdatamodeld */,
-				E1D096A21E82E766001DB9CC /* Constants.swift */,
 			);
 			path = PrizesTest;
 			sourceTree = "<group>";
@@ -119,7 +117,7 @@
 				E104D49F1E8292A200A6D8D5 /* PrizesWireFrame.swift */,
 				E104D4931E82920F00A6D8D5 /* Prizes.storyboard */,
 			);
-			name = PrizesModule;
+			path = PrizesModule;
 			sourceTree = "<group>";
 		};
 		E104D4901E8291DD00A6D8D5 /* AddPrizeModule */ = {
@@ -130,7 +128,7 @@
 				E104D49D1E82929600A6D8D5 /* AddPrizeWireFrame.swift */,
 				E104D4911E8291FF00A6D8D5 /* AddPrize.storyboard */,
 			);
-			name = AddPrizeModule;
+			path = AddPrizeModule;
 			sourceTree = "<group>";
 		};
 		E104D4A11E8292B300A6D8D5 /* DataStore */ = {
@@ -140,14 +138,28 @@
 				E1753C6D1E82D71A002FCFBD /* DataStore.swift */,
 				E136108C1E842276004A90AB /* CoreDataManager.swift */,
 			);
-			name = DataStore;
+			path = DataStore;
 			sourceTree = "<group>";
 		};
 		E1753C631E82990F002FCFBD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				E1BA50C81E8476510090D3E0 /* PrizeModel.swift */,
 			);
-			name = Entities;
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		E1BA50CA1E8476D10090D3E0 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				E1BA50D41E8477BF0090D3E0 /* AppDelegate.swift */,
+				E1BA50CC1E8477420090D3E0 /* Constants.swift */,
+				E104D4841E82919900A6D8D5 /* Assets.xcassets */,
+				E104D4861E82919900A6D8D5 /* LaunchScreen.storyboard */,
+				E104D4811E82919900A6D8D5 /* PrizesTest.xcdatamodeld */,
+				E1BA50DA1E8479AB0090D3E0 /* Info.plist */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +228,7 @@
 				E104D4881E82919900A6D8D5 /* LaunchScreen.storyboard in Resources */,
 				E104D4921E8291FF00A6D8D5 /* AddPrize.storyboard in Resources */,
 				E104D4851E82919900A6D8D5 /* Assets.xcassets in Resources */,
+				E1BA50DB1E8479AB0090D3E0 /* Info.plist in Resources */,
 				E104D4941E82920F00A6D8D5 /* Prizes.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,13 +303,14 @@
 			files = (
 				E104D4831E82919900A6D8D5 /* PrizesTest.xcdatamodeld in Sources */,
 				E104D4A01E8292A200A6D8D5 /* PrizesWireFrame.swift in Sources */,
+				E1BA50C91E8476510090D3E0 /* PrizeModel.swift in Sources */,
+				E1BA50D51E8477BF0090D3E0 /* AppDelegate.swift in Sources */,
 				E104D4981E82923F00A6D8D5 /* AddPrizeViewController.swift in Sources */,
 				E104D4961E82922600A6D8D5 /* PrizesViewController.swift in Sources */,
-				E104D47B1E82919900A6D8D5 /* AppDelegate.swift in Sources */,
-				E1D096A31E82E766001DB9CC /* Constants.swift in Sources */,
 				E104D49A1E82927200A6D8D5 /* AddPrizeInteractor.swift in Sources */,
 				E104D49C1E82928100A6D8D5 /* PrizesInteractor.swift in Sources */,
 				E1753C6E1E82D71A002FCFBD /* DataStore.swift in Sources */,
+				E1BA50D11E8477420090D3E0 /* Constants.swift in Sources */,
 				E104D49E1E82929600A6D8D5 /* AddPrizeWireFrame.swift in Sources */,
 				E136108D1E842276004A90AB /* CoreDataManager.swift in Sources */,
 			);
@@ -414,7 +428,7 @@
 			baseConfigurationReference = 8DC6D4E1EEE0D4A3C0AF7E1F /* Pods-PrizesTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = PrizesTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PrizesTest/General/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yalantis.PrizesTest;
@@ -428,7 +442,7 @@
 			baseConfigurationReference = 7477F81699656C9F2FB9B918 /* Pods-PrizesTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = PrizesTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PrizesTest/General/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yalantis.PrizesTest;
