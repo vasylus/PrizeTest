@@ -11,9 +11,11 @@ import UIKit
 protocol AddPrizeInteractorProtocol {
 
     func addNewPrize()
+    func areFieldsFilled() -> Bool
+    weak var addPrizeViewController: AddPrizeViewController? { set get}
 }
 
-final class AddPrizeInteractor: NSObject {
+final class AddPrizeInteractor: NSObject, AddPrizeInteractorProtocol {
 
     weak var addPrizeViewController: AddPrizeViewController? {
         didSet {
@@ -37,7 +39,7 @@ final class AddPrizeInteractor: NSObject {
     func areFieldsFilled() -> Bool {
 
         if !(addPrizeViewController?.nameField.text?.isEmpty)! &&
-            !(addPrizeViewController?.nameField.text?.isEmpty)! {
+            !(addPrizeViewController?.priceField.text?.isEmpty)! {
             return true
 
         } else {
@@ -45,17 +47,13 @@ final class AddPrizeInteractor: NSObject {
         }
     }
 
-}
-
-extension AddPrizeInteractor: AddPrizeInteractorProtocol {
-
     func addNewPrize() {
         let prize = PrizeModel()
 
         guard let name = addPrizeViewController?.nameField.text ,
-        let priceText = addPrizeViewController?.priceField.text else {
-            print("fields are not filled!")
-            return
+            let priceText = addPrizeViewController?.priceField.text else {
+                print("fields are not filled!")
+                return
         }
 
         prize.name = name

@@ -11,7 +11,7 @@ import UIKit
 final class AddPrizeViewController: UIViewController {
 
     var navigation: AddPrizeWireFrame?
-    var interactor: AddPrizeInteractor?
+    var interactor: AddPrizeInteractorProtocol?
     weak var prizesViewController: PrizesViewController?
 
     let doneButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(add))
