@@ -13,8 +13,8 @@ final class PrizesViewController: UIViewController {
     var navigation: PrizesWireFrame?
     var interactor: PrizesInteractor?
 
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var totalSumLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var totalSumLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ final class PrizesViewController: UIViewController {
         interactor?.totalSumLabel = totalSumLabel
     }
 
-    @IBAction func addNewPrize(_ sender: UIBarButtonItem) {
+    @IBAction private func addNewPrize(_ sender: UIBarButtonItem) {
         navigation?.createNewPrize()
     }
 

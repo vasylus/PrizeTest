@@ -14,7 +14,7 @@ final class AddPrizeViewController: UIViewController {
     var interactor: AddPrizeInteractor?
     weak var prizesViewController: PrizesViewController?
 
-    let doneButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(add))
+    private let doneButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(add))
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var priceField: UITextField!
@@ -30,8 +30,9 @@ final class AddPrizeViewController: UIViewController {
         navigationItem.rightBarButtonItem = doneButton
         doneButton.isEnabled = false
     }
-
-    func add() {
+    
+    @objc
+    private func add() {
         interactor?.addNewPrize()
     }
 

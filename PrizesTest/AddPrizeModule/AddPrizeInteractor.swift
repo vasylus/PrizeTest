@@ -35,16 +35,10 @@ final class AddPrizeInteractor: NSObject {
     }
 
     func areFieldsFilled() -> Bool {
-
-        if !(addPrizeViewController?.nameField.text?.isEmpty)! &&
-            !(addPrizeViewController?.nameField.text?.isEmpty)! {
-            return true
-
-        } else {
-            return false
-        }
+        return !(addPrizeViewController?.nameField.text?.isEmpty)! &&
+            !(addPrizeViewController?.nameField.text?.isEmpty)!
     }
-
+    
 }
 
 extension AddPrizeInteractor: AddPrizeInteractorProtocol {
