@@ -40,26 +40,26 @@ final class AddPrizeInteractor: NSObject, AddPrizeInteractorProtocol {
         return !(addPrizeViewController?.nameField.text?.isEmpty)! &&
             !(addPrizeViewController?.nameField.text?.isEmpty)!
     }
-    
+
     func addNewPrize() {
         let prize = PrizeModel()
-        
+
         guard let name = addPrizeViewController?.nameField.text ,
             let priceText = addPrizeViewController?.priceField.text else {
                 print("fields are not filled!")
                 return
         }
-        
+
         prize.name = name
         prize.price = Int(priceText)
-        
+
         DataStore.sharedInstance.addNewPrize(prize) { [weak self]  contextDidSave, _ in
             if contextDidSave {
                 self?.addPrizeViewController?.navigation?.dismissAndInsertPrize()
             }
         }
     }
-    
+
 }
 
 extension AddPrizeInteractor: UITextFieldDelegate {

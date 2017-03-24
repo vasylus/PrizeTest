@@ -12,6 +12,8 @@ protocol PrizesWireFrameProtocol {
 
     func createNewPrize()
 
+    weak var prizesViewController: PrizesViewController? {set get}
+
 }
 
 final class PrizesWireFrame: PrizesWireFrameProtocol {

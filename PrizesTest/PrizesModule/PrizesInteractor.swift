@@ -13,9 +13,13 @@ protocol PrizesIntercatorProtocol: class {
     func loadData()
     func insertNewPrize()
     func updateSummary()
+
+    var totalSumLabel: UILabel? {set get}
+    var tableView: UITableView? {set get}
+
 }
 
-final class PrizesInteractor: NSObject {
+final class PrizesInteractor: NSObject, PrizesIntercatorProtocol {
 
     var totalSumLabel: UILabel?
     var tableView: UITableView? {
@@ -27,10 +31,6 @@ final class PrizesInteractor: NSObject {
     }
     var prizes: [Prize]?
     var selectedIndexPaths: [IndexPath] = []
-
-}
-
-extension PrizesInteractor: PrizesIntercatorProtocol {
 
     func loadData() {
         prizes = DataStore.sharedInstance.arrayOfPrizes()
@@ -61,7 +61,7 @@ extension PrizesInteractor: PrizesIntercatorProtocol {
                     selectedIndexPaths.removeFirst()
                     totalSum -= Int(prize.price)
 
-                    if totalSum < Constants.maxPrice {
+                    if totalSum <= Constants.maxPrice {
                         totalSumLabel?.text = "Total: \(totalSum)"
                         tableView?.reloadData()
                         return

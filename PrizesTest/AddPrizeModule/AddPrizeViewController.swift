@@ -10,7 +10,7 @@ import UIKit
 
 final class AddPrizeViewController: UIViewController {
 
-    var navigation: AddPrizeWireFrame?
+    var navigation: AddPrizeWireFrameProtocol?
     var interactor: AddPrizeInteractorProtocol?
     weak var prizesViewController: PrizesViewController?
 
@@ -30,7 +30,7 @@ final class AddPrizeViewController: UIViewController {
         navigationItem.rightBarButtonItem = doneButton
         doneButton.isEnabled = false
     }
-    
+
     @objc
     private func add() {
         interactor?.addNewPrize()

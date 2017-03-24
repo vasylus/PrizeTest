@@ -11,7 +11,8 @@ import CoreData
 
 final class DataStore: NSObject {
 
-    private var context = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
+    private var context = NSManagedObjectContext(
+        concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
 
     static let sharedInstance: DataStore = {
         let instance = DataStore()
@@ -43,7 +44,6 @@ final class DataStore: NSObject {
         do {
             context.delete(prize!)
             try context.save()
-            print("user deleted!")
         } catch let error {
             print("Could not fetch \(error), \(error._userInfo)")
         }

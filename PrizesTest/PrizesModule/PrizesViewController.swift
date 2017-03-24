@@ -10,8 +10,8 @@ import UIKit
 
 final class PrizesViewController: UIViewController {
 
-    var navigation: PrizesWireFrame?
-    var interactor: PrizesInteractor?
+    var navigation: PrizesWireFrameProtocol?
+    var interactor: PrizesIntercatorProtocol?
 
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var totalSumLabel: UILabel!

@@ -11,6 +11,9 @@ import Foundation
 protocol AddPrizeWireFrameProtocol {
 
     func dismissAndInsertPrize()
+
+    weak var addPrizeViewController: AddPrizeViewController? {set get}
+
 }
 
 final class AddPrizeWireFrame: AddPrizeWireFrameProtocol {
