@@ -9,17 +9,14 @@
 import Foundation
 import CoreData
 
-class DataStore: NSObject {
+final class DataStore: NSObject {
 
     private var context = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
 
-    class var sharedInstance: DataStore {
-        struct Singleton {
-            static let instance = DataStore()
-        }
-
-        return Singleton.instance
-    }
+    static let sharedInstance: DataStore = {
+        let instance = DataStore()
+        return instance
+    }()
 
     override init() {
         context = CoreDataManager.sharedInstance.managedObjectContext
@@ -47,8 +44,8 @@ class DataStore: NSObject {
             context.delete(prize!)
             try context.save()
             print("user deleted!")
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
+        } catch let error {
+            print("Could not fetch \(error), \(error._userInfo)")
         }
     }
 
@@ -64,8 +61,8 @@ class DataStore: NSObject {
                 // swiftlint:disable:next force_cast
                 return result as! [Prize]
             }
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
+        } catch let error {
+            print("Could not fetch \(error), \(error._userInfo)")
             return []
         }
     }

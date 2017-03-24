@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AddPrizeInteractorProtocol {
-    
+
     func addNewPrize()
 }
 
@@ -35,8 +35,9 @@ final class AddPrizeInteractor: NSObject {
     }
 
     func areFieldsFilled() -> Bool {
-        if (addPrizeViewController?.nameField.text?.characters.count)! > 0 &&
-            (addPrizeViewController?.priceField.text?.characters.count)! > 0 {
+
+        if !(addPrizeViewController?.nameField.text?.isEmpty)! &&
+            !(addPrizeViewController?.nameField.text?.isEmpty)! {
             return true
 
         } else {
@@ -50,8 +51,15 @@ extension AddPrizeInteractor: AddPrizeInteractorProtocol {
 
     func addNewPrize() {
         let prize = PrizeModel()
-        prize.name = addPrizeViewController?.nameField.text!
-        prize.price = Int((addPrizeViewController?.priceField.text)!)
+
+        guard let name = addPrizeViewController?.nameField.text ,
+        let priceText = addPrizeViewController?.priceField.text else {
+            print("fields are not filled!")
+            return
+        }
+
+        prize.name = name
+        prize.price = Int(priceText)
 
         DataStore.sharedInstance.addNewPrize(prize) { [weak self]  contextDidSave, _ in
             if contextDidSave {
@@ -68,9 +76,9 @@ extension AddPrizeInteractor: UITextFieldDelegate {
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
         if textField == addPrizeViewController?.priceField {
-        guard let price = Int(NSString(string: textField.text!).replacingCharacters(in: range, with: string)),
-            price > Constants.maxPrice else { return true }
-        return false
+            guard let price = Int(NSString(string: textField.text!).replacingCharacters(in: range, with: string)),
+                price > Constants.maxPrice else { return true }
+            return false
         } else {
             return true
         }

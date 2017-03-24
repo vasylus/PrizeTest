@@ -9,5 +9,6 @@
 import Foundation
 
 struct Constants {
+
     static let maxPrice = 100
 }

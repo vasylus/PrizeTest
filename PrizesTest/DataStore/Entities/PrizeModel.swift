@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PrizeModel {
+final class PrizeModel {
 
     var name: String?
     var price: Int?

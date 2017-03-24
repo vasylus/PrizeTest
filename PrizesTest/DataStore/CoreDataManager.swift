@@ -9,15 +9,12 @@
 import Foundation
 import CoreData
 
-class CoreDataManager {
+final class CoreDataManager {
 
-    class var sharedInstance: CoreDataManager {
-        struct Singleton {
-            static let instance = CoreDataManager()
-        }
-
-        return Singleton.instance
-    }
+    static let sharedInstance: CoreDataManager = {
+        let instance = CoreDataManager()
+        return instance
+    }()
 
     // MARK: - Core Data stack
 
@@ -47,7 +44,7 @@ class CoreDataManager {
             dict[NSUnderlyingErrorKey] = error as NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
 
-            NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
+            print("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
             abort()
         }
 
@@ -69,8 +66,7 @@ class CoreDataManager {
                 try managedObjectContext.save()
             } catch {
 
-                let nserror = error as NSError
-                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                print("Unresolved error \(error), \(error._userInfo)")
                 abort()
             }
         }
